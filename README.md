@@ -34,7 +34,7 @@ $ cp -r ~/Desktop/adachin-wordpress-cluster-kubeconfig.yaml ~/.kube
 $ kubectl get services
 ```
 
-## Mysql Setup
+## MySQL Setup
 
 - add root pass
 ```
