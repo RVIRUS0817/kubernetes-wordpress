@@ -25,7 +25,7 @@ spec:
           - "--ignore-db-dir=lost+found"
         envFrom:
           - secretRef:
-              name: wordpress-db-secrets
+              name: wp-db-secrets
         livenessProbe:
           tcpSocket:
             port: 3306
