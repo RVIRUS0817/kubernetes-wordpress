@@ -5,6 +5,9 @@ metadata:
   name: wordpress-lb
   annotations:
     service.beta.kubernetes.io/do-loadbalancer-protocol: "http"
+    service.beta.kubernetes.io/do-loadbalancer-algorithm: "round_robin"
+    service.beta.kubernetes.io/do-loadbalancer-tls-ports: "443"
+    service.beta.kubernetes.io/do-loadbalancer-certificate-id: "xxxxxxxxxxxxxx"
 spec:
   type: LoadBalancer
   selector:
@@ -14,3 +17,7 @@ spec:
       protocol: TCP
       port: 80
       targetPort: 80
+    - name: https
+      protocol: TCP
+      port: 443
+      targetPort: 443

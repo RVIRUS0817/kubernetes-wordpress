@@ -83,6 +83,22 @@ $ kubectl apply -f manifests/wordpress-deployment.yaml
 ```
 
 ## Load Balancer Setup
+
+https://www.digitalocean.com/docs/kubernetes/how-to/configure-load-balancers/  
+
+- certificate check
+
+```
+$ curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer api-key" "https://api.digitalocean.com/v2/certificates"
+```
+
+- add certificate-ids
+
+```
+$ vim wordpress/manifests/DO-loadbalancer.yaml
+service.beta.kubernetes.io/do-loadbalancer-certificate-id: "xxxxxxxxxxxxxx"
+```
+
 ```
 $ kubectl apply -f manifests/DO-loadbalancer.yaml
 ```
