@@ -48,7 +48,7 @@ MYSQL_ROOT_PASSWORD: eDk3LVhpbmZHa01n%
 
 ```
 $ cd wordprees
-$ kubectl apply -f secrets/wp-mysql-secrets.yaml
+$ kubectl apply -f secrets/secrets.yaml
 $ kubectl apply -f manifests/mysql-volume-claim.yaml
 $ kubectl apply -f manifests/mysql-replicaset.yaml
 $ kubectl apply -f manifests/mysql-service.yaml
