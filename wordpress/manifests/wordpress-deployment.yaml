@@ -18,7 +18,6 @@ spec:
           image: wordpress:5-php7.1-apache
           ports:
           - containerPort: 80
-          - containerPort: 443
             name: wordpress
           volumeMounts:
             - name: wordpress-data
