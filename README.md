@@ -5,6 +5,9 @@
 ## Environment
 - DigitalOcean
 
+![kbs-wordpress](https://user-images.githubusercontent.com/5633085/64005707-dc44e880-cb4b-11e9-8907-032d4e168241.png)
+
+
 ```
 Some config data            (k8s ConfigMaps and Secrets)
 
