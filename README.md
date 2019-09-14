@@ -5,7 +5,7 @@
 ## Environment
 - DigitalOcean
 
-![kbs-wordpress](https://user-images.githubusercontent.com/5633085/64005707-dc44e880-cb4b-11e9-8907-032d4e168241.png)
+![スクリーンショット 2019-09-14 19 12 26](https://user-images.githubusercontent.com/5633085/64906615-9ed38400-d723-11e9-91d9-b106852dcce1.jpg)
 
 
 ```
