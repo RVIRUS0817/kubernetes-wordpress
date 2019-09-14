@@ -19,9 +19,6 @@ spec:
           ports:
           - containerPort: 80
             name: wordpress
-          volumeMounts:
-            - name: wordpress-data
-              mountPath: /var/www
           env:
             - name: WORDPRESS_DB_HOST
               value: mysql.default.svc.cluster.local
@@ -34,6 +31,9 @@ spec:
               value: root
             - name: WORDPRESS_DB_NAME
               value: wordpress
+          volumeMounts:
+            - name: wordpress-data
+              mountPath: /var/www/html
       volumes:
         - name: wordpress-data
           persistentVolumeClaim:
