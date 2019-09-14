@@ -4,6 +4,7 @@
 
 ## Environment
 - DigitalOcean
+- k8s 1.15.3-do.2
 
 ![スクリーンショット 2019-09-14 19 12 26](https://user-images.githubusercontent.com/5633085/64906615-9ed38400-d723-11e9-91d9-b106852dcce1.jpg)
 
