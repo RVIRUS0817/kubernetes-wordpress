@@ -1,9 +1,10 @@
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: wordpress
 spec:
+  serviceName: "wordpress"
   replicas: 1
   selector:
     matchLabels:
@@ -15,7 +16,7 @@ spec:
     spec:
       containers:
         - name: wordpress
-          image: wordpress:5-php7.1-apache
+          image: wordpress:5-php7.4-apache
           ports:
           - containerPort: 80
             name: wordpress
@@ -38,3 +39,12 @@ spec:
         - name: wordpress-data
           persistentVolumeClaim:
             claimName: wordpress-volume
+  volumeClaimTemplates:
+  - metadata:
+      name: wordpress-volume
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 10Gi
+      storageClassName: do-block-storage

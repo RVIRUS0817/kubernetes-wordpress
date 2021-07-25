@@ -4,7 +4,7 @@
 
 ## Environment
 - DigitalOcean
-- k8s 1.15.3-do.2
+- k8s 1.21.2-do.2
 
 ![スクリーンショット 2019-09-14 19 12 26](https://user-images.githubusercontent.com/5633085/64906615-9ed38400-d723-11e9-91d9-b106852dcce1.jpg)
 
@@ -17,7 +17,7 @@ MySQL Service               (k8s service)
     |
     |
 WordPress Container         (k8s deployment)
-[ apache and php-fpm ]
+[ apache ]
     |
     |
 DO Loadbalancer             (k8s service)
@@ -40,7 +40,7 @@ $ kubectl get services
 
 ## MySQL Setup
 
-- add root pass
+- add root pass (example)
 ```
 $ echo -n "x97-XinfGkMg" | base64
 eDk3LVhpbmZHa01n%
@@ -53,7 +53,7 @@ MYSQL_ROOT_PASSWORD: eDk3LVhpbmZHa01n%
 ```
 $ cd wordprees
 $ kubectl apply -f secrets/secrets.yaml
-$ kubectl apply -f manifests/mysql-volume-claim.yaml
+$ kubectl apply -f manifests/mysql-volume.yaml
 $ kubectl apply -f manifests/mysql-replicaset.yaml
 $ kubectl apply -f manifests/mysql-service.yaml
 
@@ -82,8 +82,8 @@ $ kubectl logs $YOURPOD
 ## Wordpress Setup
 
 ```
-$ kubectl apply -f manifests/wordpress-datavolume-claim.yaml
-$ kubectl apply -f manifests/wordpress-deployment.yaml
+$ kubectl apply -f manifests/wordpress-volume.yaml
+$ kubectl apply -f manifests/wordpress.yaml
 ```
 
 ## Load Balancer Setup
